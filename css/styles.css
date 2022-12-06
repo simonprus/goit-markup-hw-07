@@ -444,6 +444,7 @@ a:hover {
     height: 100%;
     background-color: rgba(0 0 0 / 0.5 );
     transition: transform cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
 }
 .is-hidden {
     transform: translateX(-100%);
@@ -461,8 +462,8 @@ a:hover {
     align-items: center;
 }
 .modal-button-svg {
-    width: 11px;
-    height: 11px;
+    width: 14px;
+    height: 10px;
 }
 .modal-button {
     background-color: var(--main-white);
@@ -472,7 +473,7 @@ a:hover {
     top: 8px;
     width: 30px;
     height: 30px;
-    border-color: var(--main-silver);
+    border: 1px solid var(--main-silver);
     cursor: pointer;
 }
 
@@ -548,32 +549,42 @@ a:hover {
 .fieldset-modal {
     position: relative;
     width: 448px;
-    height: 40px;
+    height: 32px;
     display: flex;
     margin-top: 20px;
-    align-items: center;
     gap: 40px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     margin-bottom: 15px;
 }
+.fieldset-modal:has(input:focus) {
+    border-color: var(--main-blue);
+}
+
+.fieldset-modal:has(input:focus) .modal-icon {
+    fill: var(--main-blue);
+}
 .modal-icon {
-    height: 35px;
-    width: 35px;
-    padding-top: 5px;
+    height: 15px;
+    width: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 12px;
 }
 .label-modal {
     position: absolute;
     top: -20px;
-    font-size: 20px;
+    font-size: 12px;
     line-height: 14px;    
     letter-spacing: 0.01em;
     color: var(--main-silver);
+    left: 3px;
 }
 .input-modal {
     border: 0;
     height: 35px;
-    width: 350px;
+    width: 370px;
+    outline: none;
 }
 .input-modal-textarea {
     border: 0;
